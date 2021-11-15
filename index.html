@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据可视化</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- 头部盒子 -->
+  <header>
+    <h1>数据可视化-ECharts</h1>
+    <div class="showTime"></div>
+    <script>
+      var t = null;
+      t = setTimeout(time, 1000)//开始运行
+      function time() {
+        clearTimeout(t);//清除定时器
+        var dt = new Date();
+        var Y = dt.getFullYear();
+        var M = dt.getMonth() + 1;
+        var D = dt.getDate();
+        var H = dt.getHours();
+        var m = dt.getMinutes();
+        var S = dt.getSeconds();
+        document.querySelector('.showTime').innerHTML =
+          '当前时间：' +
+          Y + '年' + M + '月' + D + '日' + '-' + H + '时' + m + '分' + S + '秒';
+        t = setTimeout(time, 1000) // 设置定时器，循环执行
+      }
+    </script>
+
+  </header>
+
+  <!-- 页面主体部分 -->
+  <section class="mainbox">
+    <div class="column">
+      <div class="panel bar">
+        <h2>柱形图-就业行业</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel line">
+        <h2>折线图-人员变化
+          <a href="javascript:;">2020</a>
+          <a href="javascript:;">2021</a>
+        </h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel pie">
+        <h2>饼形图-年龄分布</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="number">
+        <div class="number-hd">
+          <ul>
+            <li>125811</li>
+            <li>100000</li>
+          </ul>
+        </div>
+        <div class="number-bd ">
+          <ul>
+            <li>前端需求人数</li>
+            <li>市场供应人数</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map">
+        <div class="map1"></div>
+        <div class="map2"></div>
+        <div class="map3"></div>
+        <div class="chart">地图模块</div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="panel bar bar2">
+        <h2>柱形图-就业行业</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel line2">
+        <h2>折线图-播放量</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel pie2">
+        <h2>饼形图-地区分布</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </section>
+  <script src="js/flexible.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/china.js"></script>
+  <script src="js/myMap.js"></script>
+  <script src="js/index.js"></script>
+
+
+</body>
+
+</html>
